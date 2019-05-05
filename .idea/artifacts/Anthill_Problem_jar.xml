@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Anthill Problem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Anthill_Problem_jar</output-path>
+    <root id="archive" name="Anthill Problem.jar">
+      <element id="module-output" name="Anthill Problem" />
+    </root>
+  </artifact>
+</component>

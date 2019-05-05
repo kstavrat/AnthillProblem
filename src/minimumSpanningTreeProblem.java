@@ -115,12 +115,6 @@ public class minimumSpanningTreeProblem {
             }
         }
         calculateTotalWeight(minimumSpanningTree);
-        //print MST
-        /*
-        System.out.println("Minimum Spanning Tree: ");
-        System.out.println("Minimum Spanning Tree weight = " + weightOfGraph);
-        printGraph(minimumSpanningTree);
-        */
 
         /*
         Sorting in ascending order of the first ids and if they're equal,
@@ -171,17 +165,6 @@ public class minimumSpanningTreeProblem {
         parent[y_set_parent] = x_set_parent;
     }
 
-    /*
-    //can be used for when typing the text file.
-    private void printGraph(ArrayList<edgesBetweenTwoAnts> edgeList){
-        for (int i = 0; i <edgeList.size() ; i++) {
-            edgesBetweenTwoAnts edge = edgeList.get(i);
-            System.out.println("Edge-" + i + " source: " + edge.getNode1() +
-                    " destination: " + edge.getNode2() +
-                    " weight: " + edge.getWeight());
-        }
-    }
-    */
 
     /**
      * Calculates the total weight of the MST lastly calculated.

@@ -10,7 +10,16 @@ public class readFile {
 
     readFile(){
         try {
-            scanner = new Scanner(new File("input.txt")).useLocale(Locale.US);
+            scanner = new Scanner(new File("input2.txt")).useLocale(Locale.US);
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    readFile(String[] args){
+        try {
+            scanner = new Scanner(new File(args[0])).useLocale(Locale.US);
         }
         catch (FileNotFoundException e){
             e.printStackTrace();

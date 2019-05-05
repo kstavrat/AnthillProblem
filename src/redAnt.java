@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /**
  * Implementation of "Red Ant" class.
  * @author Stavratis Konstantinos AEM: 3137
@@ -20,4 +22,7 @@ public class redAnt extends Ant {
 
     public int getBasketCapacity() { return basketCapacity; }
 
+    public double getEuclidianDistanceFromBlackAnt(blackAnt a){
+        return  Math.sqrt(Math.pow(this.getXcoordinate()-a.getXcoordinate(),2) + Math.pow(this.getYcoordinate()-a.getYcoordinate(),2));
+    }
 }

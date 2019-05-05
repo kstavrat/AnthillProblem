@@ -39,4 +39,8 @@ public class blackAnt extends Ant {
 
     public ArrayList<Integer> getSeedVarieties(){ return seedVarieties; }
     public Integer getVariety(int variety) { return seedVarieties.get(variety); }
+
+    public double getEuclidianDistanceFromRedAnt(redAnt a){
+        return  Math.sqrt(Math.pow(this.getXcoordinate()-a.getXcoordinate(),2) + Math.pow(this.getYcoordinate()-a.getYcoordinate(),2));
+    }
 }
