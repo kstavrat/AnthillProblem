@@ -11,8 +11,8 @@ public class main {
         double startTime = System.nanoTime();
 
         System.out.println("TESTING WRITE FILE:");
-        writeFile writeFile = new writeFile();
-        //writeFile writeFile = new writeFile(args);
+        //writeFile writeFile = new writeFile();
+        writeFile writeFile = new writeFile(args);
 
         System.out.println("TESTING WRITE FILE - MST");
         writeFile.writeMSTproblem();

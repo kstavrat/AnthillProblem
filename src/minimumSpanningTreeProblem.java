@@ -104,10 +104,8 @@ public class minimumSpanningTreeProblem {
             int x_set = find(parent, edge.getNode1());
             int y_set = find(parent, edge.getNode2());
 
-            if(x_set == y_set){
-                /*A circle is created.*/
-            }
-            else{
+            //If it is equal, a circle is created.
+            if(x_set!=y_set){
                 /*add the node during this repetition in the graph.*/
                 minimumSpanningTree.add(edge);
                 currentEdge++;

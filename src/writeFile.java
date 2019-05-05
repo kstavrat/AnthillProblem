@@ -43,11 +43,11 @@ public class writeFile {
 
     public void writeStableMarriageProblem() {
         stableMarriageProblem stableMarriageProblem = new stableMarriageProblem(allAnts);
-        TreeMap<blackAnt, redAnt> matchings = stableMarriageProblem.run();
+        TreeMap<redAnt, blackAnt> matchings = stableMarriageProblem.run();
         try {
             PrintWriter printWriter = new PrintWriter("StableMarriageProblem.txt");
-            for (blackAnt black : matchings.keySet()) {
-                printWriter.println(black.getId() + " " + matchings.get(black).getId());
+            for (redAnt red : matchings.keySet()) {
+                printWriter.println(red.getId() + " " + matchings.get(red).getId());
             }
             printWriter.close();
         } catch (FileNotFoundException e) {

@@ -6,9 +6,6 @@ import java.util.*;
 
 public class stableMarriageProblem {
 
-    //private ArrayList<redAnt> arraySeparatedRedAnts;
-    //private ArrayList<blackAnt> arraySeparatedBlackAnts;
-
     private Map<redAnt, ArrayList<blackAnt>> preferencesOfRedAnts = new HashMap<>();
     private Map<blackAnt, ArrayList<redAnt>> preferencesOfBlackAnts = new HashMap<>();
 
@@ -99,7 +96,7 @@ public class stableMarriageProblem {
     }
 
 
-    public TreeMap<blackAnt, redAnt> run() {
+    public TreeMap<redAnt, blackAnt> run() {
 
         TreeMap<blackAnt,redAnt> matchings = new TreeMap<>(new Comparator<blackAnt>() {
             @Override
@@ -135,7 +132,23 @@ public class stableMarriageProblem {
                 }
             }
         }
-        return matchings;
+
+        /*
+        Reverting the order of the ids from the even numbers to the odd ones.
+         */
+        TreeMap<redAnt,blackAnt> matchingsFinal = new TreeMap<>(new Comparator<redAnt>() {
+            @Override
+            public int compare(redAnt o1,redAnt o2) {
+                if(o1.getId()>o2.getId()){ return 1; }
+                else{ if(o1.getId()==o2.getId()){ return 0; } }
+                return -1;
+            }
+        });
+
+        for(blackAnt black : matchings.keySet()){
+            matchingsFinal.put(matchings.get(black),black);
+        }
+        return matchingsFinal;
     }
 
 
