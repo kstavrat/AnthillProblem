@@ -122,11 +122,13 @@ public class minimumSpanningTreeProblem {
             @Override
             public int compare(edgesBetweenTwoAnts o1, edgesBetweenTwoAnts o2) {
                 if(o1.getNode1()>o2.getNode1()) { return 1; }
-                if(o1.getNode1()==o2.getNode1()){
-                    if(o1.getNode2()>o2.getNode2()){ return 1; }
-                }
-                else{ if(o1.getNode2()==o2.getNode2()){ return 0; }
-                    else{ return -1; }
+                if(o1.getNode1()==o2.getNode1()) {
+                    if (o1.getNode2() > o2.getNode2()) {
+                        return 1;
+                    } else {
+                        if (o1.getNode2() == o2.getNode2()) { return 0; }
+                        else { return -1; }
+                    }
                 }
                 return -1;
             }
