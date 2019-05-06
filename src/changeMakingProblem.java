@@ -12,28 +12,12 @@ public class changeMakingProblem {
 
     /**
      * This is the change-making problem implementation (ΛΕΙΤΟΥΡΓΙΑ Γ)
-     * @param unsortedCoinVarieties the different values of seeds the black ant can carry.
+     * @param CoinVarieties the different values of seeds the black ant can carry.
      * @param basketMaximumCapacity the basket capacity of the red ant.
      * @return an array list containing the number of times each seed is needed.
      * Should there be no such combination, an empty array list is returned.
      */
-    public ArrayList<Integer> run(ArrayList<Integer> unsortedCoinVarieties, int basketMaximumCapacity){
-
-        ArrayList<Integer> sortedCoinVarieties = new ArrayList<>();
-        sortedCoinVarieties.addAll(unsortedCoinVarieties);
-        Collections.sort(sortedCoinVarieties);
-
-        /*
-        Keep track of the changes that were made.
-         */
-        int[] antistoixies = new int[sortedCoinVarieties.size()];
-        for(int i=0; i<sortedCoinVarieties.size(); i++){
-            for(int j=0 ; j<unsortedCoinVarieties.size(); j++){
-                if(sortedCoinVarieties.get(i)== unsortedCoinVarieties.get(j)){
-                    antistoixies[i] = j;
-                }
-            }
-        }
+    public ArrayList<Integer> run(ArrayList<Integer> CoinVarieties, int basketMaximumCapacity){
         /*
         This is the closest somebody can get in the Java programming language.
         Integer allocates 4 bytes in memory, which is equal to 32 bits.
@@ -50,7 +34,7 @@ public class changeMakingProblem {
 
          */
         int infinity = Integer.MAX_VALUE-1;
-        int m = sortedCoinVarieties.size() + 1;
+        int m = CoinVarieties.size() + 1;
         int n = basketMaximumCapacity + 1;
         int[][] table = new int[m][n];
 
@@ -77,8 +61,8 @@ public class changeMakingProblem {
          */
         for (int i=1; i<m; i++){
             for(int j=1; j<n; j++){
-                if(j - sortedCoinVarieties.get(i-1)>=0){
-                    numberOfCoins = table[i][j-sortedCoinVarieties.get(i-1)];
+                if(j - CoinVarieties.get(i-1)>=0){
+                    numberOfCoins = table[i][j-CoinVarieties.get(i-1)];
                 }
                 else{
                     numberOfCoins = infinity;
@@ -92,8 +76,7 @@ public class changeMakingProblem {
          */
 
         //Initializing all counter to zero (0).
-        ArrayList<Integer> sortedCountersOfSeeds = new ArrayList<>();
-        ArrayList<Integer> unsortedCountersOfSeeds = new ArrayList<>();
+        ArrayList<Integer> CountersOfSeeds = new ArrayList<>();
 
         /*
         If the last place of the table is infinity, that means that there can be no combination of coins
@@ -101,29 +84,22 @@ public class changeMakingProblem {
         Therefore, only when the last element of the table is different than infinity is the back tracking initiated.
          */
         if(table[m-1][n-1]!=infinity) {
-            for (int i = 0; i < sortedCoinVarieties.size(); i++) {
-                sortedCountersOfSeeds.add(0);
+            for (int i = 0; i < CoinVarieties.size(); i++) {
+                CountersOfSeeds.add(0);
             }
             int i = m - 1;
             int j = n - 1;
             while (i > 0) {
                 if (table[i][j] < table[i - 1][j]) {
-                    sortedCountersOfSeeds.set(i - 1, sortedCountersOfSeeds.get(i - 1) + 1);
-                    j -= sortedCoinVarieties.get(i - 1);
+                    CountersOfSeeds.set(i - 1, CountersOfSeeds.get(i - 1) + 1);
+                    j -= CoinVarieties.get(i - 1);
                 } else {
                     i--;
                 }
             }
 
-        /*
-        Re-unorder the set.
-         */
-            unsortedCountersOfSeeds.addAll(sortedCountersOfSeeds);
-            for (int k = 0; k < sortedCoinVarieties.size(); k++) {
-                unsortedCountersOfSeeds.set(antistoixies[k], sortedCountersOfSeeds.get(k));
-            }
         }
 
-        return unsortedCountersOfSeeds;
+        return CountersOfSeeds;
     }
 }

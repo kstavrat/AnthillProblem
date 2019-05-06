@@ -1,3 +1,8 @@
+/**
+ * Implementation of the "readFile" class, in which the files are read.
+ * @author Stavratis Konstantinos AEM: 3137
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -8,7 +13,7 @@ public class readFile {
 
     readFile(){
         try {
-            scanner = new Scanner(new File("input2.txt")).useLocale(Locale.US);
+            scanner = new Scanner(new File("input8.txt")).useLocale(Locale.US);
         }
         catch (FileNotFoundException e){
             e.printStackTrace();

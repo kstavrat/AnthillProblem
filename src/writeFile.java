@@ -1,3 +1,8 @@
+/**
+ * In this class, the output files are written and given to the user.
+ * @author Stavratis Konstantinos, AEM: 3137
+ */
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;

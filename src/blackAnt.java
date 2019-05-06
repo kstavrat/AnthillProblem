@@ -43,4 +43,25 @@ public class blackAnt extends Ant {
     public double getEuclidianDistanceFromRedAnt(redAnt a){
         return  Math.sqrt(Math.pow(this.getXcoordinate()-a.getXcoordinate(),2) + Math.pow(this.getYcoordinate()-a.getYcoordinate(),2));
     }
+
+    /**
+     * This override will be used for the Hash Map needed in Stable Marriage Problem.
+     * @param obj Any object that is compared with a black ant.
+     * @return Whether the objects are the same. That is only true if they have the same point
+     * (meaning they are the same object) or if they have equal ids.
+     */
+    @Override
+    public boolean equals(Object obj){
+        if (obj==null){ return false; }
+        if(!(obj instanceof blackAnt)) {return false;}
+        if(obj == this){ return true;}
+        return (this.getId() == ((blackAnt) obj).getId());
+    }
+
+    /**
+     * This override will be used for the Hash Map needed in Stable Marriage Problem.
+     * @return The key of the black ant is its id.
+     */
+    @Override
+    public int hashCode(){return this.getId();}
 }

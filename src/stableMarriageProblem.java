@@ -1,4 +1,5 @@
 /**
+ * Stable Marriage Problem (Objective B of the project) is implemented in this class.
  * @author Stavratis Konstantinos AEM: 3137
  */
 
@@ -44,11 +45,14 @@ public class stableMarriageProblem {
         Creating preferencesOfRedAnts
          */
         for (int i = 0; i < arraySeparatedRedAnts.size(); i++) {
-            ArrayList<blackAnt> temp = new ArrayList<>();
+            ArrayList<blackAnt> tempArray = new ArrayList<>();
+            LinkedList<blackAnt> tempList = new LinkedList<>();
+
             for (int j = 0; j < arraySeparatedBlackAnts.size(); j++) {
-                temp.add(arraySeparatedBlackAnts.get(j));
+                tempList.add(arraySeparatedBlackAnts.get(j));
             }
-            preferencesOfRedAnts.put(arraySeparatedRedAnts.get(i), temp);
+            tempArray.addAll(tempList);
+            preferencesOfRedAnts.put(arraySeparatedRedAnts.get(i), tempArray);
         }
 
         /*
@@ -71,11 +75,13 @@ public class stableMarriageProblem {
         Creating preferencesOfBlackAnts
          */
         for (int i = 0; i < arraySeparatedBlackAnts.size(); i++) {
-            ArrayList<redAnt> temp = new ArrayList<>();
+            ArrayList<redAnt> tempArray = new ArrayList<>();
+            LinkedList<redAnt> tempList = new LinkedList<>();
             for (int j = 0; j < arraySeparatedRedAnts.size(); j++) {
-                temp.add(arraySeparatedRedAnts.get(j));
+                tempList.add(arraySeparatedRedAnts.get(j));
             }
-            preferencesOfBlackAnts.put(arraySeparatedBlackAnts.get(i), temp);
+            tempArray.addAll(tempList);
+            preferencesOfBlackAnts.put(arraySeparatedBlackAnts.get(i), tempArray);
         }
 
         /*
@@ -98,14 +104,7 @@ public class stableMarriageProblem {
 
     public TreeMap<redAnt, blackAnt> run() {
 
-        TreeMap<blackAnt,redAnt> matchings = new TreeMap<>(new Comparator<blackAnt>() {
-            @Override
-            public int compare(blackAnt o1, blackAnt o2) {
-                if(o1.getId()>o2.getId()){ return 1; }
-                else{ if(o1.getId()==o2.getId()){ return 0; } }
-                return -1;
-            }
-        });
+        HashMap<blackAnt,redAnt> matchings = new HashMap<>();
 
         LinkedList<redAnt> freeRedAnts = new LinkedList<>();
         freeRedAnts.addAll(listSeparatedRedAnts);
