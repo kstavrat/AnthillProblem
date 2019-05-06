@@ -50,7 +50,7 @@ public class writeFile {
         stableMarriageProblem stableMarriageProblem = new stableMarriageProblem(allAnts);
         TreeMap<redAnt, blackAnt> matchings = stableMarriageProblem.run();
         try {
-            PrintWriter printWriter = new PrintWriter("StableMarriageProblem.txt");
+            PrintWriter printWriter = new PrintWriter("StableMarriageProblemOutput.txt");
             for (redAnt red : matchings.keySet()) {
                 printWriter.println(red.getId() + " " + matchings.get(red).getId());
             }

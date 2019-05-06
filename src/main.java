@@ -8,17 +8,17 @@ import java.util.*;
 public class main {
     public static void main(String[] args) {
 
-        double startTime = System.nanoTime();
 
-        System.out.println("TESTING WRITE FILE:");
+        System.out.println("READING FILE:");
+        double startTime = System.nanoTime();
         //writeFile writeFile = new writeFile();
         writeFile writeFile = new writeFile(args);
 
-        System.out.println("TESTING WRITE FILE - MST");
+        System.out.println("WRITING FILE - 'MSToutput.txt'");
         writeFile.writeMSTproblem();
-        System.out.println("TESTING WRITE FILE - Stable Marriage problem");
+        System.out.println("WRITING FILE - 'StableMarriageProblemOutput.txt'");
         writeFile.writeStableMarriageProblem();
-        System.out.println("TESTING WRITE FILE - Change making problem");
+        System.out.println("WRITING FILE - 'ChangeMakingProblemOutput.txt'");
         writeFile.writeChangeMakingProblem();
 
 
