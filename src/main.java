@@ -24,7 +24,7 @@ public class main {
 
         double endTime = System.nanoTime();
 
-        System.out.println("Took " + (endTime-startTime)*0.000000001 + " seconds to complete objective A, B and C." );
+        System.out.println("Took " + (endTime-startTime)*0.000000001 + " seconds to complete objectives A, B and C." );
 
 
     }
