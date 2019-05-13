@@ -1,9 +1,9 @@
 /**
  * main function of the program.
- * @author Stavratis Konstantinos AEM: 3137
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 
-import java.util.*;
+import FileHandling.writeFile;
 
 public class main {
     public static void main(String[] args) {

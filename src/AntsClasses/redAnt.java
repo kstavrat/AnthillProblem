@@ -1,8 +1,8 @@
-import java.util.Comparator;
+package AntsClasses;
 
 /**
- * Implementation of "Red Ant" class.
- * @author Stavratis Konstantinos AEM: 3137
+ * Implementation of "Red AntsClasses.Ant" class.
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 
 public class redAnt extends Ant {
@@ -12,10 +12,10 @@ public class redAnt extends Ant {
     public redAnt(int id, double Xcoordinate, double Ycoordinate, int basketCapacity){
         super(id,Xcoordinate,Ycoordinate);
         /*
-        Checking in the internal constructor whether the constructor of mother class "Ant" was implemented successfully.
+        Checking in the internal constructor whether the constructor of mother class "AntsClasses.Ant" was implemented successfully.
          */
         if(!this.getColour()){
-            throw new java.lang.Error("This 'redAnt' object is not red.");
+            throw new java.lang.Error("This 'AntsClasses.redAnt' object is not red.");
         }
         this.basketCapacity = basketCapacity;
     }

@@ -1,10 +1,9 @@
-/**
+package ObjectiveC; /**
  * Implementation of the Change Making Problem, needed for the 3rd part of the project.
- * @author Stavratis Konstantinos AEM: 3137
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class changeMakingProblem {
 

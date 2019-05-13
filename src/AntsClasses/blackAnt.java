@@ -1,10 +1,9 @@
-/**
- * Implementation of "Black Ant" class.
- * @author Stavratis Konstantinos AEM: 3137
+package AntsClasses; /**
+ * Implementation of "Black AntsClasses.Ant" class.
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class blackAnt extends Ant {
 
@@ -21,15 +20,15 @@ public class blackAnt extends Ant {
     public blackAnt(int id, double Xcoordinate, double Ycoordinate, ArrayList<Integer> seedVarieties){
         super(id, Xcoordinate, Ycoordinate);
         /*
-        Checking in the internal constructor whether the constructor of mother class "Ant" was implemented successfully.
+        Checking in the internal constructor whether the constructor of mother class "AntsClasses.Ant" was implemented successfully.
          */
         if(this.getColour()){
-            throw new java.lang.Error("This 'blackAnt' object is not black.");
+            throw new java.lang.Error("This 'AntsClasses.blackAnt' object is not black.");
         }
         /*
         The content of the given Integer ArrayList is copied to the object SORTED.
         This will be useful when implementing the change-making problem.
-        If you desire to do so, ordering and unordering must be removed from class "changeMakingProblem".
+        If you desire to do so, ordering and unordering must be removed from class "ObjectiveC.changeMakingProblem".
          */
         //Collections.sort(seedVarieties);
 

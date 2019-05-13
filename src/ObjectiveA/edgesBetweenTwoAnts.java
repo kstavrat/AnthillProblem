@@ -1,6 +1,10 @@
+package ObjectiveA;
+
+import AntsClasses.Ant;
+
 /**
  * This class creates an edge between two ants, disregarding their colour.
- * @author Stavratis Konstantinos AEM: 3137
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 public class edgesBetweenTwoAnts {
 

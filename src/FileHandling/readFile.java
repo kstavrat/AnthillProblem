@@ -1,7 +1,9 @@
-/**
- * Implementation of the "readFile" class, in which the files are read.
- * @author Stavratis Konstantinos AEM: 3137
+package FileHandling; /**
+ * Implementation of the "FileHandling.readFile" class, in which the files are read.
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
+
+import AntsClasses.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;

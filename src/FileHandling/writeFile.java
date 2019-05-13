@@ -1,7 +1,13 @@
-/**
+package FileHandling; /**
  * In this class, the output files are written and given to the user.
- * @author Stavratis Konstantinos, AEM: 3137
+ * @author Stavratis Konstantinos, AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
+
+import AntsClasses.*;
+
+import ObjectiveA.minimumSpanningTreeProblem;
+import ObjectiveB.stableMarriageProblem;
+import ObjectiveC.changeMakingProblem;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

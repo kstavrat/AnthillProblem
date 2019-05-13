@@ -1,8 +1,10 @@
-/**
+package ObjectiveA; /**
  * This class is the implementation of the Minimum Spanning Tree problem using the Kruskal Algorithm,
  * needed for the 1st part of the project.
- * @author Stavratis Konstantinos AEM: 3137
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
+
+import AntsClasses.Ant;
 
 import java.util.*;
 
@@ -140,24 +142,38 @@ public class minimumSpanningTreeProblem {
 
     /**
      * This creates an array, where each position represents the id of the node and the value of every cell
-     * describes its father node.
+     * describes the root node in the tree they belong in. Originally, all nodes point to themselves.
      * @param parent an allocated array having the needed positions.
      */
     private void makeSet(int[] parent){
-        /*Originally, all nodes point to themselves.
-         * In this problem, IDs start from value 1.*/
+
+         /* In this problem, IDs start from value 1.*/
         for(int i=0; i<vertices+1; i++){
             parent[i] = i;
         }
     }
 
+    /**
+     * Caclulates the parent of a single vertex by refering to the parents of each node.
+     * @param parent array which tracks the father node of a tree.
+     * @param vertex that is being checked.
+     * @return a node, which is the root of a tree.
+     */
     private int find(int[] parent, int vertex){
         if (parent[vertex]!=vertex){
+            /*Searches until it finds the root of the tree.*/
             return find(parent,parent[vertex]);
         }
         return vertex;
     }
 
+
+    /**
+     * Makes the union between nodes x and y, marking the change in array parent.
+     * @param parent array which keeps track of the root of the trees that each node-cell is in.
+     * @param x a node
+     * @param y a node
+     */
     private void union(int[] parent, int x, int y){
         int x_set_parent = find(parent, x);
         int y_set_parent = find(parent, y);

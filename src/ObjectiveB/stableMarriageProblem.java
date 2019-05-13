@@ -1,7 +1,9 @@
-/**
+package ObjectiveB; /**
  * Stable Marriage Problem (Objective B of the project) is implemented in this class.
- * @author Stavratis Konstantinos AEM: 3137
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
+
+import AntsClasses.*;
 
 import java.util.*;
 
@@ -14,7 +16,7 @@ public class stableMarriageProblem {
     private LinkedList<blackAnt> listSeparetedBlackAnts;
 
     /**
-     * This is the contructor of the stableMarriageProblem.
+     * This is the contructor of the ObjectiveB.stableMarriageProblem.
      *
      * @param receivedDataAllAnts all the ants of the problem in linked list form.
      */

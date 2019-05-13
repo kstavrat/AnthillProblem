@@ -1,6 +1,8 @@
+package AntsClasses;
+
 /**
- * Implementation of mother abstract class "Ant".
- * @author Stavratis Konstantinos AEM: 3137
+ * Implementation of mother abstract class "AntsClasses.Ant".
+ * @author Stavratis Konstantinos AEM: 3137  e-mail: kstavrat@csd.auth.gr
  */
 
 public abstract class Ant {
@@ -29,7 +31,7 @@ public abstract class Ant {
     }
 
     /**
-     * Constructor of class "Ant", given an id, and a position (x,y).
+     * Constructor of class "AntsClasses.Ant", given an id, and a position (x,y).
      * @param id of ant
      * @param Xcoordinate position of ant in x-axis.
      * @param Ycoordinate position of ant in y-axis.
