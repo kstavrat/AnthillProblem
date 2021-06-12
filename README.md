@@ -1,4 +1,4 @@
-# AnthillProblem
+# Anthill Problem
 Project requested for the needs of the 4th semester subject "Algorithms" of the Aristotle University of Thessaloniki.
 
 Red and black ants live in an anthill.
@@ -58,12 +58,10 @@ The input will be read from a .txt file which follows the format mentioned above
 ...
 
 The data should be separated with whitespaces or tabs.
-Το όνομα του αρχείου αυτού θα πρέπει να δίνεται ως το μοναδικό όρισμα στο εκτελέσιμο αρχείο jar του κώδικά σας κατά την εκτέλεσή του
-από command line (προσοχή: πρέπει να διαβάζεται απευθείας από τον ίδιο φάκελο του jar και να μην χρειάζεται pathpath, π.χ. datadata.txt)
+The name of the file is to be given as a single argument to the executable jar file in the command prompt (warning: it should be read from the same directory executable jar is in without needing to define a path).
 
-2. Η έξοδος των αποτελεσμάτων για την λειτουργία Α θα γίνεται σε αρχείο txt όπου στην πρώτη γραμμή θα έχει το συνολικό βάρος MST,
-ενώ στις επόμενες γραμμές του θα έχει τα ζεύγη των Ids των μυρμηγκιών που σχηματίζουν τις ακμές (με το μικρότερο Id να αναγράφεται πρώτο),
-ταξινομημένα ως προς το πρώτο Id και κατόπιν ως προς το δεύτερο, π.χ.,
+
+2. The resulting output for operation A is to be a txt file where the first line has the total value of the MST, while the next lines are to be pairs of ids of ants which form edges (with the smallest id being referred first), sorted by the first id, followed by the second, e.g.
 1422.654
 
 1 4
@@ -76,10 +74,11 @@ The data should be separated with whitespaces or tabs.
 
 ...
 
-Τα Ids πρέπει να χωρίζονται με κενά ή tabs.
-Το αρχείο αυτό θα πρέπει να αποθηκεύεται στον ίδιο φάκελο όπως πριν χωρίς path).
+The Ids are to be separated by spaces or tabs.
+The file must be stored in the same directory (just like before, without specifying a path).
 
-3. Η έξοδος των αποτελεσμάτων για την λειτουργία Β θα γίνεται σε αρχείο txt όπου στις γραμμές του θα έχει τα τελικά ζεύγη των Ids (περιττός και άρτιος) των μυρμηγκιώ του ευσταθούς ταιριάσματος, ταξινομημένα ως προς το πρώτο Id, π.χ.,
+
+3. The results for operation B are extracted as a txt file whose lines include the final pairs of ids (odd and even) of the ants of the stable marriage, sorted by the first id, e.g. ,
 
 1 8
 
@@ -89,10 +88,10 @@ The data should be separated with whitespaces or tabs.
 
 ...
 
-Τα Ids πρέπει να χωρίζονται με κενά ή tabs.
-Το αρχείο αυτό θα πρέπει να αποθηκεύεται στον ίδιο φάκελο όπως πριν (χωρίς path).
+The data are to be separated with whitespaces or tabs.
+The name of the file is to be given as a single argument to the executable jar file in the command prompt (warning: it should be read from the same directory executable jar is in without needing to define a path).
 
-4. Η έξοδος των αποτελεσμάτων για την λειτουργία Γ θα γίνεται σε αρχείο txt όπου στις γραμμές του θα έχει τα ζεύγη των Ids (περιττός και άρτιος) των μυρμηγκιών στα οποία επιτυγχάνεται πλήρες γέμισμα, ταξινομημένα ως προς το πρώτο Id, και θα ακολουθούν 5 ακέραιοι που θα εκφράζουν πόσες φορές χρησιμοποιήθηκε ο κάθε αντίστοιχος σπόρος, π.χ.
+4. The output of operation C is to be a txt file whose llines will contain the pairs of ids (odd and even) of the ants which have successfully filled their baskets fully, sorted by the the first id, followed by 5 integers which express the number of times each seed was selected, e.g.
 
 5 6  6 1 4 0 31 17
 
@@ -100,12 +99,11 @@ The data should be separated with whitespaces or tabs.
 
 ...
 
-Τα αποτελέσματα σε κάθε γραμμή πρέπει να χωρίζονται με κενά ή tabs.
-Το αρχείο αυτό θα πρέπει να αποθηκεύεται στον ίδιο φάκελο όπως πριν (χωρίς path).
+The results of each line are to be separated by spaces or tabs.
+The file is to be stored in the same directory (without defining a path).
 
-5. Το πρόγραμμα από τη στιγμή που θα δεχθεί τα δεδομένα της εισόδου θα πρέπει να εκτελέσει τις λειτουργίες Α, Β, Γ και να παράγει τα αποτελέσματα.
+5. The moment the program receives the input data as an argument must execute operations A, B, C and produce the corresponding results.
 
-6. Να χρησιμοποιήσετε Java 1.8
+6. Use Java 1.8
 
-7..
-Ο πηγαίος κώδικας πρέπει να έχει συνοπτικά σχόλια μέσα στον κώδικα (inline) όπου είναι η απαραίτητο, και εκτενή σχόλια επάνω από κάθε συνάρτηση, τα οποία να εξηγούν το σκεπτικό της υλοποίησής σας.
+7. The source code should contain short inline comments wherever necessary, and long comments above each function, which explain the train of thought for your implementation.
